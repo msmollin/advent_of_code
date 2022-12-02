@@ -36,6 +36,8 @@ let sortedTotals = elvesTotals.sorted(by: > )
 
 //Our answer should be the first
 print("Topmost elf: \(sortedTotals[0])")
+
+// Part 2 additions
 print("Second place elf: \(sortedTotals[1])")
 print("Third place elf: \(sortedTotals[2])")
 
