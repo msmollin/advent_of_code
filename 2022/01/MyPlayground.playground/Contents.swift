@@ -25,10 +25,20 @@ var currentElfTotal = 0
 for item in elfItems {
     // Determine if we're at the end of reading thru this current elf's list
     if item.isEmpty {
+        // Append the current elf total and reset to next elf
         elvesTotals.append(currentElfTotal)
         currentElfTotal = 0
         continue
     }
     
-    
+    // We have another carried item so lets add that to the total
+    guard let caloricValue = Int(item) else { continue }
+    currentElfTotal += caloricValue
+}
+
+// Once we exit scope of the for loop we need to do one final
+// appending check to see if we have a straggler elf
+if currentElfTotal > 0 {
+    elvesTotals.append(currentElfTotal)
+    currentElfTotal = 0
 }
