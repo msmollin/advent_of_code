@@ -35,4 +35,10 @@ if currentElfTotal > 0 {
 let sortedTotals = elvesTotals.sorted(by: > )
 
 //Our answer should be the first
-print(sortedTotals.first ?? "No answer!")
+print("Topmost elf: \(sortedTotals[0])")
+print("Second place elf: \(sortedTotals[1])")
+print("Third place elf: \(sortedTotals[2])")
+
+let topThreeElves = sortedTotals[0] + sortedTotals[1] + sortedTotals[2]
+
+print("Final calculation: ", topThreeElves)
