@@ -1,24 +1,12 @@
 import Foundation
-var list =
-"""
-1000
-2000
-3000
 
-4000
+// First we need the input path
+guard let path = Bundle.main.path(forResource: "input", ofType: "txt") else { exit(1) }
 
-5000
-6000
-
-7000
-8000
-9000
-
-10000
-"""
+guard var listInput = try? String(contentsOfFile: path) else { exit(1) }
 
 //Separate the list into something we can actually work with
-let elfItems = list.components(separatedBy: .whitespacesAndNewlines)
+let elfItems = listInput.components(separatedBy: .whitespacesAndNewlines)
 
 var elvesTotals = [Int]()
 var currentElfTotal = 0
