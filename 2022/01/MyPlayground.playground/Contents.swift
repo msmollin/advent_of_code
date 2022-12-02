@@ -42,3 +42,9 @@ if currentElfTotal > 0 {
     elvesTotals.append(currentElfTotal)
     currentElfTotal = 0
 }
+
+//Now we need to find the highest. Time to sort!
+let sortedTotals = elvesTotals.sorted(by: > )
+
+//Our answer should be the first
+print(sortedTotals.first ?? "No answer!")
